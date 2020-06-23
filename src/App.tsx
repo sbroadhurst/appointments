@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import styled, { ThemeProvider } from 'styled-components'
+import { GlobalStyles } from './global'
+import { theme } from './theme'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { HashRouter, Switch, Route, useLocation } from 'react-router-dom'
+
+import Header from './components/header'
+// import Footer from './components/footer'
+import Home from './routes/home'
+import Appointments from './routes/appointments'
+
+const AppLayout = styled.div``
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
 }
 
-export default App;
+const App = () => {
+  return (
+    <HashRouter>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Header />
+        <ScrollToTop />
+        <Switch>
+          <>
+            <Route path="/appointments" component={Appointments} />
+            <Route exact path="/" component={Home} />
+          </>
+        </Switch>
+        {/* <Footer /> */}
+      </ThemeProvider>
+    </HashRouter>
+  )
+}
+
+export default App
