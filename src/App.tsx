@@ -5,10 +5,11 @@ import { theme } from './theme'
 
 import { HashRouter, Switch, Route, useLocation } from 'react-router-dom'
 
-import Header from './components/header'
+import Header from './components/Header'
 // import Footer from './components/footer'
 import Home from './routes/home'
 import Appointments from './routes/appointments'
+import HomeAssetProvider from './contexts/homeContext'
 
 const AppLayout = styled.div``
 
@@ -24,18 +25,20 @@ const ScrollToTop = () => {
 const App = () => {
   return (
     <HashRouter>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Header />
-        <ScrollToTop />
-        <Switch>
-          <>
-            <Route path="/appointments" component={Appointments} />
-            <Route exact path="/" component={Home} />
-          </>
-        </Switch>
-        {/* <Footer /> */}
-      </ThemeProvider>
+      <HomeAssetProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <Header />
+          <ScrollToTop />
+          <Switch>
+            <>
+              <Route path="/appointments" component={Appointments} />
+              <Route exact path="/" component={Home} />
+            </>
+          </Switch>
+          {/* <Footer /> */}
+        </ThemeProvider>
+      </HomeAssetProvider>
     </HashRouter>
   )
 }

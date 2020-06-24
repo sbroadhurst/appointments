@@ -10,14 +10,15 @@ declare module 'react' {
 export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   background: ${({ theme }) => theme.primaryLight};
-  height: 100vh;
+  height: 100rem;
   text-align: left;
-  padding: 2rem;
+  padding: 6rem 2rem;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
 
