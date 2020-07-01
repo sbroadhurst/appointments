@@ -9,6 +9,7 @@ import Header from './components/Header'
 // import Footer from './components/footer'
 import Home from './routes/home'
 import Appointments from './routes/appointments'
+import Contact from './routes/contact'
 import HomeAssetProvider from './contexts/homeContext'
 
 const AppLayout = styled.div``
@@ -33,6 +34,7 @@ const App = () => {
           <Switch>
             <>
               <Route path="/appointments" component={Appointments} />
+              <Route path="/contact" component={Contact} />
               <Route exact path="/" component={Home} />
             </>
           </Switch>

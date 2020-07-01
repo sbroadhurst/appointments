@@ -20,7 +20,7 @@ const navigation = (
       </span>
       Appointments
     </Link>
-    <Link to="/appointments">
+    <Link to="/contact">
       <span role="img" aria-label="contact">
         &#x1f4e9;
       </span>

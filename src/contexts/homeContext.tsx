@@ -6,6 +6,7 @@ import oncology from '../assets/Home/oncology.jpg'
 import oralHealth from '../assets/Home/oralHealth.jpg'
 import pediatric from '../assets/Home/pediatric.jpg'
 import sedation from '../assets/Home/sedation.jpg'
+import miami from '../assets/Home/miami.png'
 
 import cameraIcon from '../assets/Icons/cameraIcon.svg'
 import clipboardIcon from '../assets/Icons/clipboardIcon.svg'
@@ -64,6 +65,7 @@ const AssetProvider: FunctionComponent<IProps> = ({ children }) => {
         color: '#ff5966',
       },
     ],
+    homeImage: miami,
   }
   return <HomeContext.Provider value={state}>{children}</HomeContext.Provider>
 }

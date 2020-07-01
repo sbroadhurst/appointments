@@ -9,8 +9,7 @@ const Container = styled.div`
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  margin: auto;
-  margin-top: 10vh;
+  margin-top: 5vw;
 `
 
 const Row = styled.div`
@@ -21,12 +20,28 @@ const Row = styled.div`
   justify-content: center;
 `
 
+const ImageContainer = styled.div`
+  position: relative;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(circle, rgba(64, 64, 64, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  width: 90%;
+  height: 30vw;
+  margin: auto;
+`
+
 const Home = () => {
   const assets: any = useContext(HomeContext)
-  const { homeCards }: any = assets
+  const { homeCards, homeImage }: any = assets
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={{ position: 'relative', paddingTop: '5rem' }}>
+      <ImageContainer
+        style={{
+          background: `url(${homeImage})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: '100%',
+        }}></ImageContainer>
       <Container>
         <Row>
           {homeCards.map((card: any, index: number) => {
