@@ -8,7 +8,7 @@ interface Props {
 
 const navigation = (
   <>
-    <Link to="/appointments">
+    <Link to="/about">
       <span role="img" aria-label="about us">
         &#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;
       </span>

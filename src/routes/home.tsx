@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Card from '../components/Card'
 import { HomeContext } from '../contexts/homeContext'
+import Layout from '../components/Layout'
 
 const Container = styled.div`
   width: 100%;
@@ -34,7 +35,7 @@ const Home = () => {
   const { homeCards, homeImage }: any = assets
 
   return (
-    <div style={{ position: 'relative', paddingTop: '5rem' }}>
+    <Layout>
       <ImageContainer
         style={{
           background: `url(${homeImage})`,
@@ -61,7 +62,7 @@ const Home = () => {
           })}
         </Row>
       </Container>
-    </div>
+    </Layout>
   )
 }
 

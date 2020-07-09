@@ -6,8 +6,9 @@ import { theme } from './theme'
 import { HashRouter, Switch, Route, useLocation } from 'react-router-dom'
 
 import Header from './components/Header'
-// import Footer from './components/footer'
+import Footer from './components/Footer'
 import Home from './routes/home'
+import AboutUs from './routes/aboutUs'
 import Appointments from './routes/appointments'
 import Contact from './routes/contact'
 import HomeAssetProvider from './contexts/homeContext'
@@ -29,16 +30,15 @@ const App = () => {
       <HomeAssetProvider>
         <ThemeProvider theme={theme}>
           <GlobalStyles />
-          <Header />
           <ScrollToTop />
           <Switch>
             <>
+              <Route path="/about" component={AboutUs} />
               <Route path="/appointments" component={Appointments} />
               <Route path="/contact" component={Contact} />
               <Route exact path="/" component={Home} />
             </>
           </Switch>
-          {/* <Footer /> */}
         </ThemeProvider>
       </HomeAssetProvider>
     </HashRouter>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import moment from 'moment'
+import './contact.css'
+import Layout from '../components/Layout'
 
 const Appointments = () => {
   const [firstName, setFirstName] = useState('')
@@ -54,7 +56,7 @@ const Appointments = () => {
   //   setSchedule(schedule)
   // }
 
-  return <div>apts</div>
+  return <Layout>appointments page</Layout>
 }
 
 export default Appointments
