@@ -12,6 +12,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   flex-grow: 1;
+  width: 100vw;
 `
 
 const Page = styled.div`

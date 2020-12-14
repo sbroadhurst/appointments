@@ -72,67 +72,58 @@ const Contact = () => {
 
   return (
     <Layout>
-      <div>
-        <div className="container" style={{ width: '90vw' }}>
-          <div className="banner">
-            <div className="banner-text">Information</div>
-          </div>
-          <InfoText>Stephen's Dental Clinic</InfoText>
-          <InfoText> 123 Tooth Fairy Way</InfoText>
-          <InfoText> Lake Mary, FL 32746</InfoText>
-          <InfoText>(407) 416-1989</InfoText>
+      <div className="container" style={{ width: '90vw', marginLeft: '5vw' }}>
+        <div className="banner">
+          <div className="banner-text">Information</div>
         </div>
-        <div className="container" style={{ width: '90vw' }}>
-          <div className="banner">
-            <div className="banner-text">Contact</div>
-          </div>
-          <div>
-            {submitted === false ? (
-              <form className="form">
-                <Label>Name</Label>
-                <input required onChange={(e) => updateName(e)} type="text" id="name" name="name" className="info" />
-                {submitAttempt && badName ? <div className="error-text">Required</div> : null}
+        <InfoText>Stephen's Dental Clinic</InfoText>
+        <InfoText> 123 Tooth Fairy Way</InfoText>
+        <InfoText> Lake Mary, FL 32746</InfoText>
+        <InfoText>(407) 416-1989</InfoText>
+      </div>
+      <div className="container" style={{ width: '90vw', marginLeft: '5vw' }}>
+        <div className="banner">
+          <div className="banner-text">Contact</div>
+        </div>
+        <div>
+          {submitted === false ? (
+            <form className="form">
+              <Label>Name</Label>
+              <input required onChange={(e) => updateName(e)} type="text" id="name" name="name" className="info" />
+              {submitAttempt && badName ? <div className="error-text">Required</div> : null}
 
-                <Label>Email</Label>
-                <input
-                  required
-                  onChange={(e) => updateEmail(e)}
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="info"
-                />
-                {submitAttempt && badEmail ? <div className="error-text">Required or Bad Email Address</div> : null}
+              <Label>Email</Label>
+              <input required onChange={(e) => updateEmail(e)} type="email" id="email" name="email" className="info" />
+              {submitAttempt && badEmail ? <div className="error-text">Required or Bad Email Address</div> : null}
 
-                <Label>Phone #</Label>
-                <input required onChange={(e) => updatePhone(e)} type="text" id="phone" name="Phone" className="info" />
-                {submitAttempt && badPhone ? <div className="error-text">Required or Bad Phone Number</div> : null}
+              <Label>Phone #</Label>
+              <input required onChange={(e) => updatePhone(e)} type="text" id="phone" name="Phone" className="info" />
+              {submitAttempt && badPhone ? <div className="error-text">Required or Bad Phone Number</div> : null}
 
-                <Label style={{ justifyContent: 'left' }}>Message</Label>
-                <textarea onChange={(e) => updateMessage(e)} id="message" name="message" className="info textarea" />
-                {submitAttempt && badMessage ? <div className="error-text">Required</div> : null}
+              <Label style={{ justifyContent: 'left' }}>Message</Label>
+              <textarea onChange={(e) => updateMessage(e)} id="message" name="message" className="info textarea" />
+              {submitAttempt && badMessage ? <div className="error-text">Required</div> : null}
 
-                <div className="buttonarea">
-                  <Button type="contact" text="Send" width={'70vw'} height={'2rem'} f={() => submit()} />
-                  <Link to="/">
-                    <Button
-                      type="cancel"
-                      text="Cancel"
-                      width={'70vw'}
-                      height={'2rem'}
-                      f={() => console.log('cancelled')}
-                    />
-                  </Link>
-                </div>
-              </form>
-            ) : (
-              <div className="successful-submit">
-                {' '}
-                Thank you {name}, your email has been successfully submitted!
-                <br /> We will respond back to you as soon as possible to the email {email}.
+              <div className="buttonarea">
+                <Button type="contact" text="Send" width={'70vw'} height={'2rem'} f={() => submit()} />
+                <Link to="/">
+                  <Button
+                    type="cancel"
+                    text="Cancel"
+                    width={'70vw'}
+                    height={'2rem'}
+                    f={() => console.log('cancelled')}
+                  />
+                </Link>
               </div>
-            )}
-          </div>
+            </form>
+          ) : (
+            <div className="successful-submit">
+              {' '}
+              Thank you {name}, your email has been successfully submitted!
+              <br /> We will respond back to you as soon as possible to the email {email}.
+            </div>
+          )}
         </div>
       </div>
     </Layout>

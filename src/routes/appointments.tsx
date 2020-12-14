@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import moment from 'moment'
 import './contact.css'
 import Layout from '../components/Layout'
+import Map from '../components/Map'
 
 const Appointments = () => {
   const [firstName, setFirstName] = useState('')
@@ -55,8 +56,19 @@ const Appointments = () => {
 
   //   setSchedule(schedule)
   // }
-
-  return <Layout>appointments page</Layout>
+  const mapProps = {
+    options: {
+      center: { lat: 28.3852, lng: -81.5639 },
+      zoom: 12,
+    },
+    onMount: '',
+    className: 'google-map',
+  }
+  return (
+    <Layout>
+      <Map {...mapProps} />
+    </Layout>
+  )
 }
 
 export default Appointments

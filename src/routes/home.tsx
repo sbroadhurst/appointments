@@ -16,8 +16,7 @@ const Container = styled.div`
 const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-right: 15%;
-  margin-left: 15%;
+
   justify-content: center;
 `
 
